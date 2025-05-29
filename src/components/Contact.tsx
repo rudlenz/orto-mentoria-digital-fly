@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MessageCircle, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MessageCircle, ArrowRight, Instagram } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-black">Telefone</h4>
-                    <p className="text-gray-600">(11) 99999-9999</p>
+                    <p className="text-gray-600">(47) 99273-1096</p>
                   </div>
                 </div>
 
@@ -70,7 +70,17 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-black">WhatsApp</h4>
-                    <p className="text-gray-600">(11) 99999-9999</p>
+                    <p className="text-gray-600">(47) 99273-1096</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-penseorto-yellow rounded-lg flex items-center justify-center">
+                    <Instagram className="text-black" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-black">Instagram</h4>
+                    <p className="text-gray-600">@penseorto</p>
                   </div>
                 </div>
               </div>
@@ -148,7 +158,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-penseorto-yellow focus:border-penseorto-yellow transition-colors"
-                      placeholder="(11) 99999-9999"
+                      placeholder="(47) 99273-1096"
                     />
                   </div>
 

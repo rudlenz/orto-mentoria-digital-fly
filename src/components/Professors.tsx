@@ -4,25 +4,28 @@ import { GraduationCap, Award, Users } from 'lucide-react';
 const Professors = () => {
   const professors = [
     {
-      name: "Dr. Rômulo Pedrini",
-      title: "Especialista, Mestre e Doutorando em Ortodontia",
-      experience: "Especialista em Harmonização Orofacial",
-      specialties: ["Ortodontia", "Harmonização Orofacial", "Invisalign Doctor"],
-      description: "Especialista, Mestre e Doutorando em Ortodontia, Especialista em Harmonização Orofacial, com Pós-Graduação no exterior. Invisalign doctor, trabalha exclusivamente com Ortodontia e HOF no seu consultório, além de ser um renomado Professor atuando nos cursos de Pós-Graduação em Ortodontia e HOF. Sócio da OrtoIntelligence, maior grupo de professores de Ortodontia do Brasil, que atua em 8 escolas no Sul do país."
-    },
-    {
       name: "Dr. Giovani Mello", 
       title: "Professor desde 1999",
       experience: "Mestre e Doutorando em Ortodontia",
       specialties: ["Aparelhos Autoligados", "Harmonização Orofacial", "Planejamento Digital"],
-      description: "Professor desde 1999, Mestre e Doutorando em Ortodontia, Especialista em Harmonização Orofacial e Anatomia, com Pós-Graduação em vários países na área de aparelhos autoligados. Sócio da empresa Smyo Alinhadores Ortodônticos, atua também como planejador de casos digitais. Na prática clínica diária, trabalha exclusivamente com Ortodontia e HOF. Sócio fundador e professor da OrtoIntelligence, atua ativamente nos cursos de Pós-Graduação nos 8 institutos que a equipe se faz presente."
+      description: "Professor desde 1999, Mestre e Doutorando em Ortodontia, Especialista em Harmonização Orofacial e Anatomia, com Pós-Graduação em vários países na área de aparelhos autoligados. Sócio da empresa Smyo Alinhadores Ortodônticos, atua também como planejador de casos digitais. Na prática clínica diária, trabalha exclusivamente com Ortodontia e HOF. Sócio fundador e professor da OrtoIntelligence, atua ativamente nos cursos de Pós-Graduação nos 8 institutos que a equipe se faz presente.",
+      image: "/lovable-uploads/2e6f8ddb-4217-4ccb-ab0a-e432d99acdbc.png"
     },
     {
       name: "Dra. Helena Bussolo",
       title: "Especialista e Mestre em Ortodontia",
       experience: "Especialista em Odontopediatria e Saúde da Família", 
       specialties: ["Ortodontia", "Odontopediatria", "Invisalign Doctor"],
-      description: "Especialista e Mestre em Ortodontia, Especialista em Odontopediatria e Saúde da Família. Já fez cursos internacionais em Toronto, Miami, San City e Dubai. Invisalign doctor, atua em Balneário Camboriú exclusivamente com Ortodontia e Odontopediatria na sua clínica. Uma das fundadoras da Equipe OrtoIntelligence, leciona como Professora nos cursos de Pós-Graduação em Ortodontia e HOF, em Santa Catarina e Paraná."
+      description: "Especialista e Mestre em Ortodontia, Especialista em Odontopediatria e Saúde da Família. Já fez cursos internacionais em Toronto, Miami, San City e Dubai. Invisalign doctor, atua em Balneário Camboriú exclusivamente com Ortodontia e Odontopediatria na sua clínica. Uma das fundadoras da Equipe OrtoIntelligence, leciona como Professora nos cursos de Pós-Graduação em Ortodontia e HOF, em Santa Catarina e Paraná.",
+      image: "/lovable-uploads/8785b606-8bdf-4a9e-991f-a8b5890171b8.png"
+    },
+    {
+      name: "Dr. Rômulo Pedrini",
+      title: "Especialista, Mestre e Doutorando em Ortodontia",
+      experience: "Especialista em Harmonização Orofacial",
+      specialties: ["Ortodontia", "Harmonização Orofacial", "Invisalign Doctor"],
+      description: "Especialista, Mestre e Doutorando em Ortodontia, Especialista em Harmonização Orofacial, com Pós-Graduação no exterior. Invisalign doctor, trabalha exclusivamente com Ortodontia e HOF no seu consultório, além de ser um renomado Professor atuando nos cursos de Pós-Graduação em Ortodontia e HOF. Sócio da OrtoIntelligence, maior grupo de professores de Ortodontia do Brasil, que atua em 8 escolas no Sul do país.",
+      image: "/lovable-uploads/f6961ed0-41af-4e07-a819-aca1bfd3f535.png"
     }
   ];
 
@@ -46,8 +49,12 @@ const Professors = () => {
                 className="animate-scale-in bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
               >
                 <div className="text-center mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-penseorto-yellow to-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <GraduationCap size={36} className="text-black" />
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-penseorto-yellow">
+                    <img 
+                      src={professor.image} 
+                      alt={professor.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-2">{professor.name}</h3>
                   <p className="text-penseorto-yellow font-semibold mb-1">{professor.title}</p>

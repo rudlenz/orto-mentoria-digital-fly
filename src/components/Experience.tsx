@@ -5,6 +5,7 @@ import { useCountUp } from '@/hooks/useCountUp';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [visibleMilestones, setVisibleMilestones] = useState<number[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,6 +24,18 @@ const Experience = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timeouts = [0, 500, 1000, 1500].map((delay, index) =>
+        setTimeout(() => {
+          setVisibleMilestones(prev => [...prev, index]);
+        }, delay)
+      );
+
+      return () => timeouts.forEach(clearTimeout);
+    }
+  }, [isVisible]);
 
   const professionalsCount = useCountUp({ end: 500, duration: 2500, trigger: isVisible });
   const coursesCount = useCountUp({ end: 50, duration: 2000, trigger: isVisible });
@@ -103,8 +116,15 @@ const Experience = () => {
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-penseorto-yellow to-yellow-400"></div>
               
               {milestones.map((milestone, index) => (
-                <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`animate-slide-in-${index % 2 === 0 ? 'left' : 'right'} w-full md:w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                <div 
+                  key={index} 
+                  className={`relative flex items-center mb-12 transition-all duration-700 ${
+                    visibleMilestones.includes(index) 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-10'
+                  } ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                >
+                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                     <div className="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                       <div className="text-2xl font-bold text-penseorto-yellow mb-2">{milestone.year}</div>
                       <h4 className="text-xl font-bold text-black mb-3">{milestone.title}</h4>
@@ -112,7 +132,9 @@ const Experience = () => {
                     </div>
                   </div>
                   
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-penseorto-yellow rounded-full border-4 border-white shadow-lg"></div>
+                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-penseorto-yellow rounded-full border-4 border-white shadow-lg transition-all duration-500 ${
+                    visibleMilestones.includes(index) ? 'scale-100' : 'scale-0'
+                  }`}></div>
                 </div>
               ))}
             </div>

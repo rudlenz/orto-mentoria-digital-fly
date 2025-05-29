@@ -67,7 +67,7 @@ const Portfolio = () => {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="animate-scale-in bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
+                className="animate-scale-in bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100 flex flex-col"
               >
                 <div className="text-center mb-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-penseorto-yellow to-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -85,9 +85,9 @@ const Portfolio = () => {
                   <p className="text-gray-600 text-sm">{service.format}</p>
                 </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed">{service.description}</p>
+                <p className="text-gray-700 mb-6 leading-relaxed flex-grow">{service.description}</p>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mb-8">
                   <h4 className="font-semibold text-black">Inclui:</h4>
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
@@ -97,7 +97,7 @@ const Portfolio = () => {
                   ))}
                 </div>
 
-                <div className="mt-8">
+                <div className="mt-auto">
                   <button className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300">
                     Saiba Mais
                   </button>

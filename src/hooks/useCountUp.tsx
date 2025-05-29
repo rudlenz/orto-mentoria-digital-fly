@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface UseCountUpProps {
   end: number;
@@ -10,27 +10,42 @@ interface UseCountUpProps {
 
 export const useCountUp = ({ end, duration, start = 0, trigger = true }: UseCountUpProps) => {
   const [count, setCount] = useState(start);
+  const startTimeRef = useRef<number | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!trigger) return;
+    if (!trigger) {
+      setCount(start);
+      return;
+    }
 
-    let startTime: number | null = null;
-    const startValue = start;
-    const endValue = end;
-
+    startTimeRef.current = null;
+    
     const animate = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
+      if (startTimeRef.current === null) {
+        startTimeRef.current = currentTime;
+      }
       
-      const currentCount = startValue + (endValue - startValue) * progress;
+      const progress = Math.min((currentTime - startTimeRef.current) / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      
+      const currentCount = start + (end - start) * easeOutQuart;
       setCount(Math.floor(currentCount));
 
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        animationFrameRef.current = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
       }
     };
 
-    requestAnimationFrame(animate);
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
   }, [end, duration, start, trigger]);
 
   return count;
