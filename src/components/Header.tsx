@@ -21,7 +21,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/9a7d0eb1-954b-45bc-83de-bce92dbcaf75.png" 
+              src="/pictures-uploads/9a7d0eb1-954b-45bc-83de-bce92dbcaf75.png" 
               alt="Pense Orto Logo" 
               className="h-16 w-auto"
             />
