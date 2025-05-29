@@ -4,25 +4,25 @@ import { GraduationCap, Award, Users } from 'lucide-react';
 const Professors = () => {
   const professors = [
     {
-      name: "Dr. Professor 1",
-      title: "Especialista em Ortodontia",
-      experience: "7+ anos de experiência",
-      specialties: ["Ortodontia Corretiva", "Aparelhos Fixos", "Tratamentos Complexos"],
-      description: "Pioneiro em técnicas inovadoras de ortodontia, com vasta experiência em casos complexos e formação de novos especialistas."
+      name: "Dr. Rômulo Pedrini",
+      title: "Especialista, Mestre e Doutorando em Ortodontia",
+      experience: "Especialista em Harmonização Orofacial",
+      specialties: ["Ortodontia", "Harmonização Orofacial", "Invisalign Doctor"],
+      description: "Especialista, Mestre e Doutorando em Ortodontia, Especialista em Harmonização Orofacial, com Pós-Graduação no exterior. Invisalign doctor, trabalha exclusivamente com Ortodontia e HOF no seu consultório, além de ser um renomado Professor atuando nos cursos de Pós-Graduação em Ortodontia e HOF. Sócio da OrtoIntelligence, maior grupo de professores de Ortodontia do Brasil, que atua em 8 escolas no Sul do país."
     },
     {
-      name: "Dr. Professor 2", 
-      title: "Mestre em Ortodontia",
-      experience: "8+ anos de experiência",
-      specialties: ["Ortodontia Preventiva", "Aparelhos Móveis", "Ortodontia Interceptiva"],
-      description: "Especialista reconhecido em ortodontia preventiva e interceptiva, com dedicação especial ao ensino e formação acadêmica."
+      name: "Dr. Giovani Mello", 
+      title: "Professor desde 1999",
+      experience: "Mestre e Doutorando em Ortodontia",
+      specialties: ["Aparelhos Autoligados", "Harmonização Orofacial", "Planejamento Digital"],
+      description: "Professor desde 1999, Mestre e Doutorando em Ortodontia, Especialista em Harmonização Orofacial e Anatomia, com Pós-Graduação em vários países na área de aparelhos autoligados. Sócio da empresa Smyo Alinhadores Ortodônticos, atua também como planejador de casos digitais. Na prática clínica diária, trabalha exclusivamente com Ortodontia e HOF. Sócio fundador e professor da OrtoIntelligence, atua ativamente nos cursos de Pós-Graduação nos 8 institutos que a equipe se faz presente."
     },
     {
-      name: "Dr. Professor 3",
-      title: "Doutor em Ortodontia",
-      experience: "5+ anos de experiência", 
-      specialties: ["Ortodontia Estética", "Alinhadores", "Biomecânica Ortodôntica"],
-      description: "Referência em ortodontia estética moderna, sempre atualizado com as mais recentes tecnologias e técnicas do mercado."
+      name: "Dra. Helena Bussolo",
+      title: "Especialista e Mestre em Ortodontia",
+      experience: "Especialista em Odontopediatria e Saúde da Família", 
+      specialties: ["Ortodontia", "Odontopediatria", "Invisalign Doctor"],
+      description: "Especialista e Mestre em Ortodontia, Especialista em Odontopediatria e Saúde da Família. Já fez cursos internacionais em Toronto, Miami, San City e Dubai. Invisalign doctor, atua em Balneário Camboriú exclusivamente com Ortodontia e Odontopediatria na sua clínica. Uma das fundadoras da Equipe OrtoIntelligence, leciona como Professora nos cursos de Pós-Graduação em Ortodontia e HOF, em Santa Catarina e Paraná."
     }
   ];
 
@@ -54,7 +54,7 @@ const Professors = () => {
                   <p className="text-gray-600">{professor.experience}</p>
                 </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed">{professor.description}</p>
+                <p className="text-gray-700 mb-6 leading-relaxed text-sm">{professor.description}</p>
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-black mb-3">Especialidades:</h4>

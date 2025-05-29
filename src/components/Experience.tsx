@@ -1,7 +1,34 @@
 
 import { Calendar, BookOpen, Users, Trophy } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useCountUp } from '@/hooks/useCountUp';
 
 const Experience = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById('experiencia');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const professionalsCount = useCountUp({ end: 500, duration: 2500, trigger: isVisible });
+  const coursesCount = useCountUp({ end: 50, duration: 2000, trigger: isVisible });
+  const awardsCount = useCountUp({ end: 15, duration: 1500, trigger: isVisible });
+  const yearsCount = useCountUp({ end: 20, duration: 2000, trigger: isVisible });
+
   const milestones = [
     {
       year: "2004",
@@ -28,25 +55,29 @@ const Experience = () => {
   const achievements = [
     {
       icon: Users,
-      number: "500+",
+      count: professionalsCount,
+      suffix: "+",
       label: "Profissionais Formados",
       description: "Ortodontistas formados ao longo de duas décadas"
     },
     {
       icon: BookOpen,
-      number: "50+",
+      count: coursesCount,
+      suffix: "+",
       label: "Cursos Ministrados", 
       description: "Cursos de pós-graduação e especialização"
     },
     {
       icon: Trophy,
-      number: "15+",
+      count: awardsCount,
+      suffix: "+",
       label: "Prêmios e Reconhecimentos",
       description: "Reconhecimentos na área educacional"
     },
     {
       icon: Calendar,
-      number: "20+",
+      count: yearsCount,
+      suffix: "+",
       label: "Anos de Dedicação",
       description: "Décadas dedicadas ao ensino de qualidade"
     }
@@ -97,7 +128,9 @@ const Experience = () => {
               {achievements.map((achievement, index) => (
                 <div key={index} className="animate-scale-in text-center">
                   <achievement.icon className="text-penseorto-yellow mx-auto mb-4" size={48} />
-                  <div className="text-4xl font-bold text-white mb-2">{achievement.number}</div>
+                  <div className="text-4xl font-bold text-white mb-2">
+                    {achievement.count}{achievement.suffix}
+                  </div>
                   <div className="text-lg font-semibold text-penseorto-yellow mb-2">{achievement.label}</div>
                   <p className="text-gray-300 text-sm leading-relaxed">{achievement.description}</p>
                 </div>

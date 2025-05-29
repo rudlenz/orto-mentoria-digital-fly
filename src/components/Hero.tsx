@@ -1,7 +1,19 @@
 
 import { ArrowRight, Star, Users, Award } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useCountUp } from '@/hooks/useCountUp';
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const yearsCount = useCountUp({ end: 20, duration: 2000, trigger: isVisible });
+  const professorsCount = useCountUp({ end: 3, duration: 1500, trigger: isVisible });
+  const dedicationCount = useCountUp({ end: 100, duration: 2500, trigger: isVisible });
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -10,7 +22,17 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="inicio" className="min-h-screen relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80)'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/75"></div>
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-penseorto-yellow rounded-full blur-3xl"></div>
@@ -53,19 +75,19 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="animate-slide-in-left bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <Award className="text-penseorto-yellow mx-auto mb-4" size={48} />
-              <h3 className="text-3xl font-bold text-white mb-2">20+</h3>
+              <h3 className="text-3xl font-bold text-white mb-2">{yearsCount}+</h3>
               <p className="text-gray-300">Anos de Experiência</p>
             </div>
             
             <div className="animate-fade-in bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <Users className="text-penseorto-yellow mx-auto mb-4" size={48} />
-              <h3 className="text-3xl font-bold text-white mb-2">03</h3>
+              <h3 className="text-3xl font-bold text-white mb-2">{professorsCount < 10 ? `0${professorsCount}` : professorsCount}</h3>
               <p className="text-gray-300">Professores Especialistas</p>
             </div>
             
             <div className="animate-slide-in-right bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <Star className="text-penseorto-yellow mx-auto mb-4" size={48} />
-              <h3 className="text-3xl font-bold text-white mb-2">100%</h3>
+              <h3 className="text-3xl font-bold text-white mb-2">{dedicationCount}%</h3>
               <p className="text-gray-300">Dedicação ao Ensino</p>
             </div>
           </div>
