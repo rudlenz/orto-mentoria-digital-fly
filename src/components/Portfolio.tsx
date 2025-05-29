@@ -1,7 +1,12 @@
 
 import { Monitor, Users, FileText, Clock, Calendar, User } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const Portfolio = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useIntersectionObserver({ threshold: 0.3 });
+  const { ref: cardsRef, isVisible: cardsVisible } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: ctaRef, isVisible: ctaVisible } = useIntersectionObserver({ threshold: 0.3 });
+
   const services = [
     {
       icon: Monitor,
@@ -55,19 +60,29 @@ const Portfolio = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+            <h2 
+              ref={titleRef}
+              className={`text-4xl md:text-5xl font-bold text-black mb-6 transition-all duration-1000 ${
+                titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+            >
               Nosso <span className="text-penseorto-yellow">Portfólio</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
+              titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
               Oferecemos três modalidades de mentoria em ortodontia, cada uma adaptada às suas necessidades e disponibilidade.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="animate-scale-in bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100 flex flex-col"
+                className={`bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100 flex flex-col transition-all duration-700 ${
+                  cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="text-center mb-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-penseorto-yellow to-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -106,7 +121,12 @@ const Portfolio = () => {
             ))}
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-penseorto-yellow to-yellow-400 rounded-2xl p-8 md:p-12 text-center">
+          <div 
+            ref={ctaRef}
+            className={`mt-16 bg-gradient-to-r from-penseorto-yellow to-yellow-400 rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ${
+              ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
               Pronto para Transformar sua Carreira?
             </h3>

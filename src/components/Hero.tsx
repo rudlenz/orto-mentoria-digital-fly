@@ -1,14 +1,10 @@
 
 import { ArrowRight, Star, Users, Award } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import { useCountUp } from '@/hooks/useCountUp';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.3 });
 
   const yearsCount = useCountUp({ end: 20, duration: 2000, trigger: isVisible });
   const professorsCount = useCountUp({ end: 3, duration: 1500, trigger: isVisible });
@@ -22,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="min-h-screen relative overflow-hidden">
+    <section id="inicio" className="min-h-screen relative overflow-hidden" ref={ref}>
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -42,7 +38,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in">
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Mentoria em 
               <span className="text-penseorto-yellow block mt-2">Ortodontia</span>
@@ -73,19 +69,19 @@ const Hero = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="animate-slide-in-left bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <Award className="text-penseorto-yellow mx-auto mb-4" size={48} />
               <h3 className="text-3xl font-bold text-white mb-2">{yearsCount}+</h3>
               <p className="text-gray-300">Anos de Experiência</p>
             </div>
             
-            <div className="animate-fade-in bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Users className="text-penseorto-yellow mx-auto mb-4" size={48} />
               <h3 className="text-3xl font-bold text-white mb-2">{professorsCount < 10 ? `0${professorsCount}` : professorsCount}</h3>
               <p className="text-gray-300">Professores Especialistas</p>
             </div>
             
-            <div className="animate-slide-in-right bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <Star className="text-penseorto-yellow mx-auto mb-4" size={48} />
               <h3 className="text-3xl font-bold text-white mb-2">{dedicationCount}%</h3>
               <p className="text-gray-300">Dedicação ao Ensino</p>
