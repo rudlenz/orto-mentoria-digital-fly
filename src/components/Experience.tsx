@@ -14,7 +14,7 @@ const Experience = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 } // Reduced threshold for better mobile support
+      { threshold: 0.1 }
     );
 
     const section = document.getElementById('experiencia');
@@ -27,7 +27,6 @@ const Experience = () => {
 
   useEffect(() => {
     if (isVisible) {
-      // Staggered animation for milestones with longer delays for mobile
       const timeouts = [0, 300, 600, 900].map((delay, index) =>
         setTimeout(() => {
           setVisibleMilestones(prev => [...prev, index]);
@@ -114,7 +113,6 @@ const Experience = () => {
           <div className="mb-20">
             <h3 className="text-3xl font-bold text-black text-center mb-12">Trajetória de Sucesso</h3>
             <div className="relative">
-              {/* Timeline line - responsive */}
               <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-penseorto-green to-gray-300"></div>
               
               {milestones.map((milestone, index) => (
@@ -126,7 +124,6 @@ const Experience = () => {
                       : 'opacity-0 translate-y-10'
                   } ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
                 >
-                  {/* Mobile layout */}
                   <div className="md:hidden ml-12 w-full">
                     <div className="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                       <div className="text-2xl font-bold text-penseorto-green mb-2">{milestone.year}</div>
@@ -135,7 +132,6 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  {/* Desktop layout */}
                   <div className={`hidden md:block w-full md:w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                     <div className="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                       <div className="text-2xl font-bold text-penseorto-green mb-2">{milestone.year}</div>
@@ -144,7 +140,6 @@ const Experience = () => {
                     </div>
                   </div>
                   
-                  {/* Timeline dot */}
                   <div className={`absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 w-8 h-8 md:w-4 md:h-4 bg-penseorto-green rounded-full border-4 border-white shadow-lg transition-all duration-500 ${
                     visibleMilestones.includes(index) ? 'scale-100' : 'scale-0'
                   }`}></div>
@@ -156,18 +151,18 @@ const Experience = () => {
           {/* Achievements Grid */}
           <div className="bg-gradient-to-br from-penseorto-green to-white rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
-              Números que <span className="text-penseorto-gray">Impressionam</span>
+              Números que <span className="text-white">Impressionam</span>
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {achievements.map((achievement, index) => (
                 <div key={index} className="animate-scale-in text-center">
-                  <achievement.icon className="text-penseorto-gray mx-auto mb-4" size={48} />
+                  <achievement.icon className="text-white mx-auto mb-4" size={48} />
                   <div className="text-4xl font-bold text-black mb-2">
                     {achievement.count}{achievement.suffix}
                   </div>
-                  <div className="text-lg font-semibold text-penseorto-gray mb-2">{achievement.label}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{achievement.description}</p>
+                  <div className="text-lg font-semibold text-white mb-2">{achievement.label}</div>
+                  <p className="text-white text-sm leading-relaxed">{achievement.description}</p>
                 </div>
               ))}
             </div>
@@ -175,13 +170,13 @@ const Experience = () => {
 
           {/* Quote Section */}
           <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-penseorto-green to-white rounded-2xl p-8 md:p-12">
-              <blockquote className="text-2xl md:text-3xl font-bold text-black mb-6 italic">
+            <div className="bg-gradient-to-r from-gray-200 to-gray-100 rounded-2xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                Por que escolher nossa mentoria?
+              </h3>
+              <blockquote className="text-lg md:text-xl" style={{ color: '#709395' }}>
                 "Nossa missão é transformar conhecimento em excelência, e excelência em sucesso profissional."
               </blockquote>
-              <p className="text-lg text-gray-800 font-semibold">
-                - Equipe Pense Orto
-              </p>
             </div>
           </div>
         </div>

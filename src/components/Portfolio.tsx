@@ -61,7 +61,7 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 
-              ref={titleRef}
+              ref={titleRef as any}
               className={`text-4xl md:text-5xl font-bold text-black mb-6 transition-all duration-1000 ${
                 titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
@@ -75,7 +75,7 @@ const Portfolio = () => {
             </p>
           </div>
 
-          <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div ref={cardsRef as any} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 
                 key={index}
@@ -85,7 +85,7 @@ const Portfolio = () => {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-penseorto-green to-white rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
                     <service.icon size={32} className="text-black" />
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-2">{service.title}</h3>
@@ -113,7 +113,7 @@ const Portfolio = () => {
                 </div>
 
                 <div className="mt-auto">
-                  <button className="w-full bg-penseorto-green text-white py-3 rounded-lg font-semibold hover:bg-penseorto-gray transition-colors duration-300">
+                  <button className="w-full bg-white text-penseorto-green py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300 border-2 border-penseorto-green">
                     Saiba Mais
                   </button>
                 </div>
@@ -122,7 +122,7 @@ const Portfolio = () => {
           </div>
 
           <div 
-            ref={ctaRef}
+            ref={ctaRef as any}
             className={`mt-16 bg-gradient-to-r from-penseorto-green to-white rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ${
               ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}

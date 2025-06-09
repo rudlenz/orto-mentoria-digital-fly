@@ -31,7 +31,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 
-              ref={titleRef}
+              ref={titleRef as any}
               className={`text-4xl md:text-5xl font-bold text-black mb-6 transition-all duration-1000 ${
                 titleVisible 
                   ? 'opacity-100 translate-y-0' 
@@ -42,7 +42,7 @@ const About = () => {
             </h2>
             
             <div 
-              ref={contentRef}
+              ref={contentRef as any}
               className={`transition-all duration-1000 delay-300 ${
                 contentVisible 
                   ? 'opacity-100 translate-y-0' 
@@ -61,7 +61,7 @@ const About = () => {
           </div>
 
           <div 
-            ref={cardsRef}
+            ref={cardsRef as any}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
           >
             {features.map((feature, index) => (
@@ -81,13 +81,13 @@ const About = () => {
             ))}
           </div>
 
-          <div className={`bg-gradient-to-r from-penseorto-green to-white rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 delay-1000 ${
+          <div className={`bg-penseorto-green rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 delay-1000 ${
             cardsVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-10'
           }`}>
-            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
-              Por que escolher a <span className="text-penseorto-gray">Pense Orto?</span>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Por que escolher a <span className="text-white">Pense Orto?</span>
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -100,8 +100,8 @@ const About = () => {
                 "Certificação reconhecida no mercado"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 text-left">
-                  <CheckCircle className="text-penseorto-gray flex-shrink-0" size={20} />
-                  <span className="text-black">{item}</span>
+                  <CheckCircle className="text-white flex-shrink-0" size={20} />
+                  <span className="text-white">{item}</span>
                 </div>
               ))}
             </div>

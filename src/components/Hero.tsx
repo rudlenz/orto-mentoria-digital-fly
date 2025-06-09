@@ -26,7 +26,7 @@ const Hero = () => {
           backgroundImage: 'url(https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80)'
         }}
       >
-        <div className="absolute inset-0 bg-penseorto-green/75"></div>
+        <div className="absolute inset-0 bg-penseorto-green/85"></div>
       </div>
 
       {/* Background Pattern */}
