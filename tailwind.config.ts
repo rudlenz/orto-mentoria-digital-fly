@@ -64,9 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				penseorto: {
-					yellow: '#fedf02',
-					black: '#000000',
-					white: '#ffffff'
+					green: '#9acacc',
+					gray: '#818285',
+					white: '#ffffff',
+					black: '#000000'
 				}
 			},
 			borderRadius: {

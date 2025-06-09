@@ -15,8 +15,8 @@ const About = () => {
     },
     {
       icon: Award,
-      title: "Professores Especialistas",
-      description: "Time de professores com vasta experiência prática e acadêmica, reconhecidos no mercado brasileiro."
+      title: "Mentores Especialistas",
+      description: "Time de mentores com vasta experiência prática e acadêmica, reconhecidos no mercado brasileiro."
     },
     {
       icon: Target,
@@ -38,7 +38,7 @@ const About = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              Sobre a <span className="text-penseorto-yellow">Pense Orto</span>
+              Sobre a <span className="text-penseorto-green">Pense Orto</span>
             </h2>
             
             <div 
@@ -50,14 +50,12 @@ const About = () => {
               }`}
             >
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-                A Pense Orto nasceu da paixão pelo ensino e da vontade de transformar a ortodontia brasileira. 
-                Com 20 anos de experiência no mercado educacional de pós-graduação, desenvolvemos uma metodologia 
-                única que combina teoria sólida com prática intensiva.
+                Nossa missão é transformar, auxiliar e facilitar o dia a dia de clínica dos ortodontistas e pós graduandos em Ortodontia através de técnicas modernas e tratamentos eficazes!
               </p>
               
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Nossa missão é formar ortodontistas de excelência, capazes de transformar sorrisos e vidas 
-                através de técnicas modernas e tratamentos eficazes.
+                Com 20 anos de experiência no mercado educacional de pós-graduação, desenvolvemos uma metodologia 
+                única que combina teoria sólida com prática intensiva.
               </p>
             </div>
           </div>
@@ -76,34 +74,34 @@ const About = () => {
                 }`}
                 style={{ transitionDelay: `${index * 200 + 600}ms` }}
               >
-                <feature.icon className="text-penseorto-yellow mb-6" size={48} />
+                <feature.icon className="text-penseorto-green mb-6" size={48} />
                 <h3 className="text-xl font-bold text-black mb-4">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
 
-          <div className={`bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 delay-1000 ${
+          <div className={`bg-gradient-to-r from-penseorto-green to-white rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 delay-1000 ${
             cardsVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-10'
           }`}>
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Por que escolher a <span className="text-penseorto-yellow">Pense Orto?</span>
+            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
+              Por que escolher a <span className="text-penseorto-gray">Pense Orto?</span>
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 "Metodologia testada e aprovada por centenas de alunos",
-                "Professores com experiência real de clínica e mercado",
+                "Mentores com experiência real de clínica e mercado",
                 "Material didático atualizado com as últimas tendências",
                 "Suporte contínuo durante e após a formação",
                 "Rede de networking com outros profissionais",
                 "Certificação reconhecida no mercado"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 text-left">
-                  <CheckCircle className="text-penseorto-yellow flex-shrink-0" size={20} />
-                  <span className="text-gray-300">{item}</span>
+                  <CheckCircle className="text-penseorto-gray flex-shrink-0" size={20} />
+                  <span className="text-black">{item}</span>
                 </div>
               ))}
             </div>

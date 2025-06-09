@@ -66,7 +66,7 @@ const Portfolio = () => {
                 titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              Nosso <span className="text-penseorto-yellow">Portfólio</span>
+              Nosso <span className="text-penseorto-green">Portfólio</span>
             </h2>
             <p className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
               titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -85,14 +85,14 @@ const Portfolio = () => {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-penseorto-yellow to-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-penseorto-green to-white rounded-full mx-auto mb-4 flex items-center justify-center">
                     <service.icon size={32} className="text-black" />
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-2">{service.title}</h3>
                   
                   <div className="flex items-center justify-center gap-4 mb-2">
                     <div className="flex items-center gap-1">
-                      <Clock size={16} className="text-penseorto-yellow" />
+                      <Clock size={16} className="text-penseorto-green" />
                       <span className="text-gray-600 text-sm">{service.duration}</span>
                     </div>
                   </div>
@@ -106,14 +106,14 @@ const Portfolio = () => {
                   <h4 className="font-semibold text-black">Inclui:</h4>
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-penseorto-yellow rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-penseorto-green rounded-full flex-shrink-0"></div>
                       <span className="text-gray-600 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-auto">
-                  <button className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300">
+                  <button className="w-full bg-penseorto-green text-white py-3 rounded-lg font-semibold hover:bg-penseorto-gray transition-colors duration-300">
                     Saiba Mais
                   </button>
                 </div>
@@ -123,7 +123,7 @@ const Portfolio = () => {
 
           <div 
             ref={ctaRef}
-            className={`mt-16 bg-gradient-to-r from-penseorto-yellow to-yellow-400 rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ${
+            className={`mt-16 bg-gradient-to-r from-penseorto-green to-white rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ${
               ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
@@ -131,9 +131,9 @@ const Portfolio = () => {
               Pronto para Transformar sua Carreira?
             </h3>
             <p className="text-lg text-gray-800 mb-8 max-w-2xl mx-auto">
-              Escolha a modalidade que melhor se adapta ao seu perfil e comece sua jornada de especialização em ortodontia com os melhores professores do Brasil.
+              Escolha a modalidade que melhor se adapta ao seu perfil e comece sua jornada de especialização em ortodontia com os melhores mentores do Brasil.
             </p>
-            <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors duration-300">
+            <button className="bg-penseorto-gray text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-black transition-colors duration-300">
               Entre em Contato
             </button>
           </div>
