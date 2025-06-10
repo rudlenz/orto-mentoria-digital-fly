@@ -40,6 +40,7 @@ const Header = () => {
               <button 
                 key={index}
                 onClick={() => scrollToSection(headerOption.scrollTo)}
+                style={{textTransform: 'uppercase', letterSpacing: '0.8px'}}
                 className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
               >
                 {headerOption.label}
