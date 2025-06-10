@@ -6,7 +6,7 @@ const Mentors = () => {
     {
       name: "Dr. Giovani Mello", 
       title: "Ortodontista desde 1996",
-      experience: "Mentor e Coordenador de cursos desde 1999",
+      experience: "Professor e Coordenador de cursos desde 1999",
       specialties: ["Aparelhos Autoligados", "Harmonização Orofacial", "Planejamento Digital"],
       description: "Mestre e doutorando em Ortodontia, Especialista em HOF e Anatomia humana. Pós graduação em Sistemas de Braquetes autoligados em Toronto- Canadá, Dubai- Emirados Árabes, San City- África do Sul, Miami- Estados Unidos. Mentor e Coordenador de Odontologia- 1999-2013- Uniplac- Lages- SC. Mentor de Odontologia- 2000-2002- Unoesc- Joaçaba-SC. Mentor e Coordenador de Odontologia- 2013-2020- Uniavan- Balneário Camboriú-SC. Mentor e Coordenador em Ortodontia desde 2004.",
       image: "/pictures-uploads/2e6f8ddb-4217-4ccb-ab0a-e432d99acdbc.png"
@@ -57,8 +57,8 @@ const Mentors = () => {
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-2">{mentor.name}</h3>
-                  <p className="text-white font-semibold mb-1">{mentor.title}</p>
-                  <p className="text-white">{mentor.experience}</p>
+                  <p className="text-black font-bold mb-1">{mentor.title}</p>
+                  <p className="text-black font-semibold">{mentor.experience}</p>
                 </div>
 
                 <p className="text-black mb-6 leading-relaxed text-sm">{mentor.description}</p>

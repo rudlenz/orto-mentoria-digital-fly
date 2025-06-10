@@ -20,47 +20,45 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/d939a6ff-347e-4876-86ec-9a1479243217.png" 
-              alt="Pense Orto Logo" 
-              className="h-24 w-auto"
-            />
+            <div 
+              className="w-[280px] h-[70px] bg-[url('/lovable-uploads/d939a6ff-347e-4876-86ec-9a1479243217.png')] bg-contain bg-no-repeat bg-center">
+            </div>
           </div>
           
           <nav className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('inicio')}
-              className="text-black hover:text-gray-700 transition-colors duration-300"
+              className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
             >
               Início
             </button>
             <button 
               onClick={() => scrollToSection('sobre')}
-              className="text-black hover:text-gray-700 transition-colors duration-300"
+              className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
             >
               Sobre
             </button>
             <button 
               onClick={() => scrollToSection('mentores')}
-              className="text-black hover:text-gray-700 transition-colors duration-300"
+              className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
             >
               Mentores
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="text-black hover:text-gray-700 transition-colors duration-300"
+              className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
             >
               Portfólio
             </button>
             <button 
               onClick={() => scrollToSection('experiencia')}
-              className="text-black hover:text-gray-700 transition-colors duration-300"
+              className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
             >
               Experiência
             </button>
             <button 
               onClick={() => scrollToSection('contato')}
-              className="text-black hover:text-gray-700 transition-colors duration-300"
+              className="text-black hover:text-gray-700 transition-colors duration-300 font-semibold"
             >
               Contato
             </button>

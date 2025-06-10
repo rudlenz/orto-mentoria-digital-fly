@@ -86,22 +86,22 @@ const Contact = () => {
               </div>
 
               <div className="bg-penseorto-green rounded-2xl p-8">
-                <h4 className="text-2xl font-bold text-white mb-4">Por que escolher nossa mentoria?</h4>
+                <h4 className="text-2xl font-bold text-black mb-4">Por que escolher nossa mentoria?</h4>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-gray-100">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <li className="flex items-center gap-3 text-black">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
                     <span>Acompanhamento personalizado</span>
                   </li>
-                  <li className="flex items-center gap-3 text-gray-100">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <li className="flex items-center gap-3 text-black">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
                     <span>20 anos de experiência comprovada</span>
                   </li>
-                  <li className="flex items-center gap-3 text-gray-100">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <li className="flex items-center gap-3 text-black">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
                     <span>Metodologia exclusiva</span>
                   </li>
-                  <li className="flex items-center gap-3 text-gray-100">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <li className="flex items-center gap-3 text-black">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
                     <span>Suporte durante toda a jornada</span>
                   </li>
                 </ul>
@@ -180,7 +180,7 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-penseorto-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-penseorto-gray transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                    className="w-full bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-penseorto-gray transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Enviar Mensagem
                     <ArrowRight size={20} />
