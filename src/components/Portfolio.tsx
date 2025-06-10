@@ -62,13 +62,13 @@ const Portfolio = () => {
           <div className="text-center mb-16">
             <h2 
               ref={titleRef as any}
-              className={`text-4xl md:text-5xl font-bold text-black mb-6 transition-all duration-1000 ${
+              className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${
                 titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              Nosso <span className="text-penseorto-green">Portfólio</span>
+              <span className="text-white">Nosso</span> <span className="text-penseorto-green">Portfólio</span>
             </h2>
-            <p className={`text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
+            <p className={`text-xl text-white max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
               titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               Oferecemos três modalidades de mentoria em ortodontia, cada uma adaptada às suas necessidades e disponibilidade.
@@ -130,8 +130,8 @@ const Portfolio = () => {
             <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
               Pronto para Transformar sua Carreira?
             </h3>
-            <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
-              Escolha a modalidade que melhor se adapta ao seu perfil e comece sua jornada de especialização em ortodontia com os melhores mentores do Brasil.
+            <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
+              Nossa missão é transformar conhecimento em excelência, e excelência em sucesso profissional.
             </p>
             <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
               Entre em Contato
