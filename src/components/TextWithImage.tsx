@@ -1,3 +1,4 @@
+import Photo from '../../public/pictures-uploads/EquipPhoto.jpg';
 
 const TextWithImage = () => {
   return (
@@ -41,7 +42,7 @@ const TextWithImage = () => {
               <div className="relative">
                 <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
                   <img
-                    src="https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=600&fit=crop"
+                    src={Photo}
                     alt="Profissional da ortodontia"
                     className="w-full h-full object-cover"
                   />

@@ -1,9 +1,7 @@
-
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
-import PhotoCarousel from '@/components/PhotoCarousel';
 import Mentors from '@/components/Professors';
 import Experience from '@/components/Experience';
 import TextWithImage from '@/components/TextWithImage';
@@ -16,9 +14,8 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
-      <Portfolio />
-      <PhotoCarousel />
       <Mentors />
+      <Portfolio />
       <Experience />
       <TextWithImage />
       <Contact />
