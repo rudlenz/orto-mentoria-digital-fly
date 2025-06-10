@@ -178,23 +178,6 @@ const Experience = () => {
               ))}
             </div>
           </div>
-
-          {/* Quote Section */}
-          <div className="mt-16 text-center">
-            <div className="bg-penseorto-green rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-6">
-                Por que escolher nossa mentoria?
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3 text-left">
-                    <CheckCircle className="text-black flex-shrink-0" size={20} />
-                    <span className="text-black">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
