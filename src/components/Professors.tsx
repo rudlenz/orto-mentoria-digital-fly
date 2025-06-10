@@ -79,7 +79,7 @@ const Mentors = () => {
           </div>
 
           <div style={{marginBottom: '80px'}}>
-            <div style={{ borderRadius: '20px', height: 600, backgroundImage: `url(${HorizontalPhoto})`, backgroundRepeat: 'no-repeat', backgroundPositionX: 'center', backgroundPositionY: '22% !important', backgroundSize: 'cover', filter: 'saturate(0.9)'}}/>
+            <div style={{ borderRadius: '20px', height: window.innerWidth <= 768 ? 400 : 600, backgroundImage: `url(${HorizontalPhoto})`, backgroundRepeat: 'no-repeat', backgroundPositionX: 'center', backgroundPositionY: '22% !important', backgroundSize: 'cover', filter: 'saturate(0.9)'}}/>
           </div>
 
           <div className="bg-penseorto-gray rounded-2xl p-8 md:p-12 text-center shadow-lg">
