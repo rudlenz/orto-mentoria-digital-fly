@@ -8,7 +8,7 @@ const Footer = () => {
             {/* Logo and Description */}
             <div>
               <div className="text-2xl font-bold mb-4">
-                Pense<span className="text-white">Orto</span>
+                Pense<span className="text-penseorto-green">Orto</span>
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Mentoria especializada em ortodontia com 20 anos de experiência no mercado educacional de pós-graduação.
