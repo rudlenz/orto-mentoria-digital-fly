@@ -56,7 +56,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-penseorto-gray">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -123,17 +123,17 @@ const Portfolio = () => {
 
           <div 
             ref={ctaRef as any}
-            className={`mt-16 bg-gradient-to-r from-penseorto-green to-white rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ${
+            className={`mt-16 bg-penseorto-green rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ${
               ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
               Pronto para Transformar sua Carreira?
             </h3>
-            <p className="text-lg text-gray-800 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
               Escolha a modalidade que melhor se adapta ao seu perfil e comece sua jornada de especialização em ortodontia com os melhores mentores do Brasil.
             </p>
-            <button className="bg-penseorto-gray text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-black transition-colors duration-300">
+            <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
               Entre em Contato
             </button>
           </div>

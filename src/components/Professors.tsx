@@ -46,10 +46,10 @@ const Mentors = () => {
             {mentors.map((mentor, index) => (
               <div 
                 key={index}
-                className="animate-scale-in bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
+                className="animate-scale-in bg-penseorto-green rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
               >
                 <div className="text-center mb-6">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-penseorto-green">
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white">
                     <img 
                       src={mentor.image} 
                       alt={mentor.name}
@@ -57,19 +57,19 @@ const Mentors = () => {
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-2">{mentor.name}</h3>
-                  <p className="text-penseorto-green font-semibold mb-1">{mentor.title}</p>
-                  <p className="text-gray-600">{mentor.experience}</p>
+                  <p className="text-white font-semibold mb-1">{mentor.title}</p>
+                  <p className="text-white">{mentor.experience}</p>
                 </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed text-sm">{mentor.description}</p>
+                <p className="text-black mb-6 leading-relaxed text-sm">{mentor.description}</p>
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-black mb-3">Especialidades:</h4>
                   <div className="space-y-2">
                     {mentor.specialties.map((specialty, specIndex) => (
                       <div key={specIndex} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-penseorto-green rounded-full"></div>
-                        <span className="text-gray-600">{specialty}</span>
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        <span className="text-black">{specialty}</span>
                       </div>
                     ))}
                   </div>
@@ -78,31 +78,31 @@ const Mentors = () => {
             ))}
           </div>
 
-          <div className="bg-white rounded-2xl p-8 md:p-12 text-center shadow-lg">
+          <div className="bg-penseorto-gray rounded-2xl p-8 md:p-12 text-center shadow-lg">
             <h3 className="text-3xl md:text-4xl font-bold text-penseorto-green mb-6">
               Experiência Comprovada
             </h3>
-            <p className="text-xl text-black mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
               Juntos, nossos mentores acumulam mais de 20 anos de experiência no mercado educacional de pós-graduação em ortodontia, formando milhares de especialistas de sucesso.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center">
-                <Award className="text-black mb-4" size={48} />
-                <h4 className="text-2xl font-bold text-black mb-2">5000+</h4>
-                <p className="text-black">Alunos Formados</p>
+                <Award className="text-white mb-4" size={48} />
+                <h4 className="text-2xl font-bold text-white mb-2">5000+</h4>
+                <p className="text-white">Alunos Formados</p>
               </div>
               
               <div className="flex flex-col items-center">
-                <Users className="text-black mb-4" size={48} />
-                <h4 className="text-2xl font-bold text-black mb-2">20+</h4>
-                <p className="text-black">Anos de Ensino</p>
+                <Users className="text-white mb-4" size={48} />
+                <h4 className="text-2xl font-bold text-white mb-2">20+</h4>
+                <p className="text-white">Anos de Ensino</p>
               </div>
               
               <div className="flex flex-col items-center">
-                <GraduationCap className="text-black mb-4" size={48} />
-                <h4 className="text-2xl font-bold text-black mb-2">100%</h4>
-                <p className="text-black">Taxa de Sucesso</p>
+                <GraduationCap className="text-white mb-4" size={48} />
+                <h4 className="text-2xl font-bold text-white mb-2">100%</h4>
+                <p className="text-white">Taxa de Sucesso</p>
               </div>
             </div>
           </div>

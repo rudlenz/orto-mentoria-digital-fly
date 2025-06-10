@@ -149,16 +149,16 @@ const Experience = () => {
           </div>
 
           {/* Achievements Grid */}
-          <div className="bg-gradient-to-br from-penseorto-green to-white rounded-2xl p-8 md:p-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
-              Números que <span className="text-white">Impressionam</span>
+          <div className="bg-penseorto-gray rounded-2xl p-8 md:p-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              <span className="text-penseorto-green">Números que</span> <span className="text-white">Impressionam</span>
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {achievements.map((achievement, index) => (
                 <div key={index} className="animate-scale-in text-center">
                   <achievement.icon className="text-white mx-auto mb-4" size={48} />
-                  <div className="text-4xl font-bold text-black mb-2">
+                  <div className="text-4xl font-bold text-white mb-2">
                     {achievement.count}{achievement.suffix}
                   </div>
                   <div className="text-lg font-semibold text-white mb-2">{achievement.label}</div>
@@ -170,11 +170,11 @@ const Experience = () => {
 
           {/* Quote Section */}
           <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-gray-200 to-gray-100 rounded-2xl p-8 md:p-12">
+            <div className="bg-penseorto-gray rounded-2xl p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
                 Por que escolher nossa mentoria?
               </h3>
-              <blockquote className="text-lg md:text-xl" style={{ color: '#709395' }}>
+              <blockquote className="text-lg md:text-xl text-black">
                 "Nossa missão é transformar conhecimento em excelência, e excelência em sucesso profissional."
               </blockquote>
             </div>
