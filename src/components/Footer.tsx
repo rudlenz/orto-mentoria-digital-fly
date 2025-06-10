@@ -65,7 +65,7 @@ const Footer = () => {
                 © 2024 Pense Orto. Todos os direitos reservados.
               </p>
               <p className="text-gray-300 text-sm mt-4 md:mt-0">
-                Mentoria especializada em ortodontia
+                  Desenvolvido by Somma Marketing
               </p>
             </div>
           </div>
