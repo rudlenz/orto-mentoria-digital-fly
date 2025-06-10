@@ -2,6 +2,7 @@
 import { ArrowRight, Star, Users, Award } from 'lucide-react';
 import { useCountUp } from '@/hooks/useCountUp';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import BackgroundImageToHero from '../../public/pictures-uploads/heroBackground.jpg';
 
 const Hero = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.3 });
@@ -23,7 +24,8 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80)'
+          backgroundImage: `url(${BackgroundImageToHero})`,
+          backgroundPosition: 'inherit'
         }}
       >
         <div className="absolute inset-0 bg-black/70"></div>
