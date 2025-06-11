@@ -10,21 +10,54 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Aqui você implementaria o envio do formulário
-    alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+  const [errors, setErrors] = useState({
+    email: '',
+    phone: ''
+  });
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    const regex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+    return regex.test(phone);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    if (name === 'email') {
+      setErrors({
+        ...errors,
+        email: validateEmail(value) ? '' : 'Por favor, insira um e-mail válido.'
+      });
+    }
+
+    if (name === 'phone') {
+      setErrors({
+        ...errors,
+        phone: validatePhone(value) ? '' : 'Por favor, insira um telefone válido.'
+      });
+    }
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateEmail(formData.email) || !validatePhone(formData.phone)) {
+      alert('Por favor, preencha corretamente os campos de e-mail e telefone.');
+      return;
+    }
+
+    console.log('Form submitted:', formData);
+    alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setErrors({ email: '', phone: '' });
+  };
+  
   return (
     <section id="contato" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-6">
@@ -50,7 +83,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-black">Email</h4>
-                    <p className="text-gray-600">contato@penseorto.com.br</p>
+                    <p className="text-gray-600">penseorto@gmail.com</p>
                   </div>
                 </div>
 
@@ -112,7 +145,7 @@ const Contact = () => {
             <div className="animate-slide-in-right">
               <div className="bg-white rounded-2xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold text-black mb-6">Solicite Informações</h3>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -141,9 +174,10 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-penseorto-green focus:border-penseorto-green transition-colors"
+                      className={`w-full px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-penseorto-green focus:border-penseorto-green transition-colors`}
                       placeholder="seu@email.com"
                     />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                   </div>
 
                   <div>
@@ -156,10 +190,12 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      maxLength={15}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-penseorto-green focus:border-penseorto-green transition-colors"
+                      className={`w-full px-4 py-3 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-penseorto-green focus:border-penseorto-green transition-colors`}
                       placeholder="(47) 99273-1096"
                     />
+                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                   </div>
 
                   <div>

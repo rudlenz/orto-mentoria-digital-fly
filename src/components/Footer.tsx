@@ -51,7 +51,7 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-white">Contato</h4>
               <div className="space-y-2 text-gray-300">
-                <p>contato@penseorto.com.br</p>
+                <p>penseorto@gmail.com</p>
                 <p>(47) 99273-1096</p>
                 <p>WhatsApp: (47) 99273-1096</p>
                 <p>Instagram: @penseorto</p>
