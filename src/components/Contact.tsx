@@ -1,6 +1,7 @@
 
 import { Mail, Phone, MessageCircle, ArrowRight, Instagram } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -47,15 +48,30 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateEmail(formData.email) || !validatePhone(formData.phone)) {
-      alert('Por favor, preencha corretamente os campos de e-mail e telefone.');
-      return;
-    }
+    const newErrors: { email: string; phone: string } = {email: '', phone: ''};
+    if (!validateEmail(formData.email)) newErrors.email = 'Email inválido';
+    if (!validatePhone(formData.phone)) newErrors.phone = 'Telefone inválido';
 
-    console.log('Form submitted:', formData);
-    alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-    setErrors({ email: '', phone: '' });
+    // Enviar email via EmailJS
+    emailjs.send(
+      'service_tlyyisg', // service_id
+      'template_74nfvhe', // template_id
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      },
+      'a5x71_qXwuEfAkYUR' // public key
+    )
+    .then(() => {
+      alert('Mensagem enviada com sucesso! Entraremos em contato');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setErrors({email: '', phone: ''});
+    })
+    .catch(() => {
+      alert('Falha ao enviar a mensagem. Tente novamente mais tarde.');
+    });
   };
   
   return (
