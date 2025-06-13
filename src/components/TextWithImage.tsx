@@ -1,4 +1,4 @@
-import Photo from '../../public/pictures-uploads/EquipPhoto.jpg';
+import Photo from '../../public/pictures-uploads/backgroundHeroToMobile.jpg';
 
 const TextWithImage = () => {
   return (
@@ -41,10 +41,8 @@ const TextWithImage = () => {
             <div className="lg:col-span-1">
               <div className="relative">
                 <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
-                  <img
-                    src={Photo}
-                    alt="Profissional da ortodontia"
-                    className="w-full h-full object-cover"
+                  <div
+                    style={{width: '100%', height: '100%', backgroundImage: `url(${Photo})`, backgroundSize: 'cover'}}
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-penseorto-green rounded-full opacity-20"></div>
